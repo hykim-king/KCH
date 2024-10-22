@@ -162,21 +162,16 @@ public class MovieDaoMain {
     public static void showAllMovies() {
         System.out.println("영화 목록");
 
-        // 중복 제거 로직 추가
         List<MovieVO> movieList = dao.doSelectAll();
         Set<String> movieTitles = new HashSet<>(); // 제목을 저장할 Set
-        List<MovieVO> uniqueMovies = new ArrayList<>(); // 중복 제거된 영화 리스트
 
         for (MovieVO movie : movieList) {
             if (movieTitles.add(movie.getTitle())) { // 제목이 Set에 추가되면 중복이 아님
-                uniqueMovies.add(movie); // 중복이 아닌 영화만 추가
+                System.out.println(movie); // 중복이 아닌 영화만 출력
             }
         }
-
-        for (MovieVO movie : uniqueMovies) {
-            System.out.println(movie);
-        }
     }
+
 
 
     private static MovieVO createMovieFromInput() {
