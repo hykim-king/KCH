@@ -1,13 +1,33 @@
 package com.pcwk.ehr.admin;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class MovieVO {
     private String title;
     private String genre;
     private int age;
     private Double rating;
-    private LocalDate startDate;
+    @Override
+	public int hashCode() {
+		return Objects.hash(age, genre, rating, seat, startDate, time, title);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		MovieVO other = (MovieVO) obj;
+		return age == other.age && Objects.equals(genre, other.genre) && Objects.equals(rating, other.rating)
+				&& Objects.equals(seat, other.seat) && Objects.equals(startDate, other.startDate)
+				&& Objects.equals(time, other.time) && Objects.equals(title, other.title);
+	}
+
+	private LocalDate startDate;
     private String time;
     private String seat; 
 

@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+import com.pcwk.ehr.User.userInterface;
 import com.pcwk.ehr.admin.MovieDaoMain;
 import com.pcwk.ehr.booking.Booking;
 import com.pcwk.ehr.booking.BookingMain;
@@ -18,8 +19,7 @@ public class GenreMain {
 				System.out.println("1. 장르별 영화 조회");
 				System.out.println("2. 예매");
 				System.out.println("3. 메인 메뉴");
-				System.out.println("4. 종료");
-				System.out.print("\n 메뉴를 선택하세요: \n ");
+				System.out.print("메뉴를 선택하세요: \n ");
 
 				int choice = Integer.parseInt(reader.readLine());
 
@@ -40,8 +40,8 @@ public class GenreMain {
 				case 3:
 					// 메인 메뉴 구현 후 테스트 필요
 					System.out.println("메인 메뉴로 돌아갑니다.");
-					MovieDaoMain movieDaoMain = new MovieDaoMain(); // 인스턴스 생성
-					movieDaoMain.showMenu(); // 인스턴스를 통해 메소드 호출
+					userInterface ui = new userInterface(); // 인스턴스 생성
+					ui.showMenu(); // 인스턴스를 통해 메소드 호출
 					break;
 
 				case 4:
@@ -57,8 +57,5 @@ public class GenreMain {
 		}
 	}
 
-	public static void main(String[] args) {
-		GenreMain main = new GenreMain();
-		main.showMenu(); // 메뉴 표시
-	}
+	
 }

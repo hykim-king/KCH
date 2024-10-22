@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.List;
 
+import com.pcwk.ehr.User.userInterface;
 import com.pcwk.ehr.admin.MovieDaoMain;
 import com.pcwk.ehr.admin.MovieVO;
 import com.pcwk.ehr.booking.Booking;
@@ -21,7 +22,6 @@ public class RatingMain {
 				System.out.println("1. 평점별 영화 조회");
 				System.out.println("2. 예매");
 				System.out.println("3. 메인 메뉴");
-				System.out.println("4. 종료");
 				System.out.print("\n메뉴를 선택하세요: ");
 
 				int choice = Integer.parseInt(reader.readLine());
@@ -40,8 +40,8 @@ public class RatingMain {
 				case 3:
 					// 메인 메뉴 구현 후 테스트 필요
 					System.out.println("메인 메뉴로 돌아갑니다.");
-					MovieDaoMain movieDaoMain = new MovieDaoMain(); // 인스턴스 생성
-					movieDaoMain.showMenu(); // 인스턴스를 통해 메소드 호출
+					userInterface ui = new userInterface(); // 인스턴스 생성
+					ui.showMenu(); // 인스턴스를 통해 메소드 호출
 					break;
 
 				case 4:
@@ -57,8 +57,5 @@ public class RatingMain {
 		}
 	}
 
-	public static void main(String[] args) {
-		RatingMain main = new com.pcwk.ehr.rating.RatingMain();
-		main.showMenu(); // 메뉴 표시
-	}
+	
 }
