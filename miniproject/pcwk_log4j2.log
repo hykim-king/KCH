@@ -1,0 +1,75 @@
+[2024-10-23 08:48:10] DEBUG MemberDao.doRetrieve(MemberDao.java:127) - 1.param:MemberDTO [memberId=user01, memberName=null, password=1234, email=null, birthday=null, cellphone=null, loginCount=0, teamId=2, regDt=null, teamName=null, roleName=null, toString()=net.pcwk.ehr.member.MemberDTO@4b41dd5c]
+[2024-10-23 08:48:10] DEBUG MemberDao.doRetrieve(MemberDao.java:128) - 2.sql:
+ SELECT                                                      
+     M.MEMBER_ID,         -- 회원 ID                          
+     M.MEMBER_NAME,       -- 사용자명                           
+     M.PASSWORD,          -- 비밀번호                           
+     M.EMAIL,             -- 이메일                            
+     M.BIRTHDAY,          -- 생년월일                           
+     M.CELLPHONE,         -- 핸드폰                            
+     M.LOGIN_COUNT,       -- 로그인 횟수                         
+     T.TEAM_NAME,         -- 팀명                             
+     R.ROLE_NAME,         -- 권한명                            
+     TO_CHAR( M.REG_DT,'yyyy/mm/dd hh24:mi:ss ff') REG_DT    
+ FROM                                                        
+     MEMBER M                                                
+ JOIN                                                        
+     TEAM T ON M.TEAM_ID = T.TEAM_ID                         
+ LEFT JOIN                                                   
+     USER_ROLE UR ON M.MEMBER_ID = UR.MEMBER_ID              
+ LEFT JOIN                                                   
+     ROLE R ON UR.ROLE_ID = R.ROLE_ID                        
+ WHERE M.TEAM_ID = ?                                       
+
+[2024-10-23 08:48:10] DEBUG MemberDao.doRetrieve(MemberDao.java:134) - 3.conn:oracle.jdbc.driver.T4CConnection@23bb8443
+[2024-10-23 08:48:10] DEBUG MemberDao.doRetrieve(MemberDao.java:136) - 3.1pstmt:oracle.jdbc.driver.OraclePreparedStatementWrapper@24d09c1
+[2024-10-23 13:55:24] DEBUG MemberDao.doRetrieve(MemberDao.java:127) - 1.param:MemberDTO [memberId=user01, memberName=null, password=1234, email=null, birthday=null, cellphone=null, loginCount=0, teamId=2, regDt=null, teamName=null, roleName=null, toString()=net.pcwk.ehr.member.MemberDTO@1e461e41]
+[2024-10-23 13:55:24] DEBUG MemberDao.doRetrieve(MemberDao.java:128) - 2.sql:
+ SELECT                                                      
+     M.MEMBER_ID,         -- 회원 ID                          
+     M.MEMBER_NAME,       -- 사용자명                           
+     M.PASSWORD,          -- 비밀번호                           
+     M.EMAIL,             -- 이메일                            
+     M.BIRTHDAY,          -- 생년월일                           
+     M.CELLPHONE,         -- 핸드폰                            
+     M.LOGIN_COUNT,       -- 로그인 횟수                         
+     T.TEAM_NAME,         -- 팀명                             
+     R.ROLE_NAME,         -- 권한명                            
+     TO_CHAR( M.REG_DT,'yyyy/mm/dd hh24:mi:ss ff') REG_DT    
+ FROM                                                        
+     MEMBER M                                                
+ JOIN                                                        
+     TEAM T ON M.TEAM_ID = T.TEAM_ID                         
+ LEFT JOIN                                                   
+     USER_ROLE UR ON M.MEMBER_ID = UR.MEMBER_ID              
+ LEFT JOIN                                                   
+     ROLE R ON UR.ROLE_ID = R.ROLE_ID                        
+ WHERE M.TEAM_ID = ?                                       
+
+[2024-10-23 13:55:24] DEBUG MemberDao.doRetrieve(MemberDao.java:134) - 3.conn:oracle.jdbc.driver.T4CConnection@6a396c1e
+[2024-10-23 13:55:24] DEBUG MemberDao.doRetrieve(MemberDao.java:136) - 3.1pstmt:oracle.jdbc.driver.OraclePreparedStatementWrapper@47f4e407
+[2024-10-23 14:57:33] DEBUG MemberDao.doRetrieve(MemberDao.java:127) - 1.param:MemberDTO [memberId=user01, memberName=null, password=1234, email=null, birthday=null, cellphone=null, loginCount=0, teamId=2, regDt=null, teamName=null, roleName=null, toString()=net.pcwk.ehr.member.MemberDTO@61544ae6]
+[2024-10-23 14:57:33] DEBUG MemberDao.doRetrieve(MemberDao.java:128) - 2.sql:
+ SELECT                                                      
+     M.MEMBER_ID,         -- 회원 ID                          
+     M.MEMBER_NAME,       -- 사용자명                           
+     M.PASSWORD,          -- 비밀번호                           
+     M.EMAIL,             -- 이메일                            
+     M.BIRTHDAY,          -- 생년월일                           
+     M.CELLPHONE,         -- 핸드폰                            
+     M.LOGIN_COUNT,       -- 로그인 횟수                         
+     T.TEAM_NAME,         -- 팀명                             
+     R.ROLE_NAME,         -- 권한명                            
+     TO_CHAR( M.REG_DT,'yyyy/mm/dd hh24:mi:ss ff') REG_DT    
+ FROM                                                        
+     MEMBER M                                                
+ JOIN                                                        
+     TEAM T ON M.TEAM_ID = T.TEAM_ID                         
+ LEFT JOIN                                                   
+     USER_ROLE UR ON M.MEMBER_ID = UR.MEMBER_ID              
+ LEFT JOIN                                                   
+     ROLE R ON UR.ROLE_ID = R.ROLE_ID                        
+ WHERE M.TEAM_ID = ?                                       
+
+[2024-10-23 14:57:33] DEBUG MemberDao.doRetrieve(MemberDao.java:134) - 3.conn:oracle.jdbc.driver.T4CConnection@6a396c1e
+[2024-10-23 14:57:33] DEBUG MemberDao.doRetrieve(MemberDao.java:136) - 3.1pstmt:oracle.jdbc.driver.OraclePreparedStatementWrapper@1d470d0
